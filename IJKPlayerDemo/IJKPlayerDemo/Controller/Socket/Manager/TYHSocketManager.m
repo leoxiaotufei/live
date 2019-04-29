@@ -30,7 +30,7 @@ static const uint16_t Kport = 6969;
 - (void)initSocket
 {
     gcdSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    
+    NSLog(@"aaa");
 }
 #pragma mark - 对外的一些接口
 
