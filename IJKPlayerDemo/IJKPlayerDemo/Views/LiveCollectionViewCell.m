@@ -8,7 +8,7 @@
 
 #import "LiveCollectionViewCell.h"
 #import "LiveModel.h"
-
+#import "ALinUser.h"
 @interface LiveCollectionViewCell()
 
 @property (nonatomic, strong) UIImageView *cover;
@@ -48,6 +48,17 @@
         return;
     }
     NSURL *url = [NSURL URLWithString:liveModel.data.live_info.creator.portrait];
+    [self.cover sd_setImageWithURL:url placeholderImage:nil options:SDWebImageTransformAnimatedImage];
+}
+
+- (void)setAlinUser:(ALinUser *)alinUser {
+    _alinUser = alinUser;
+    self.name.text = alinUser.nickname?:@"";
+    if (!alinUser.photo || alinUser.photo.length <= 0) {
+        return;
+    }
+    
+    NSURL *url = [NSURL URLWithString:alinUser.photo];
     [self.cover sd_setImageWithURL:url placeholderImage:nil options:SDWebImageTransformAnimatedImage];
 }
 

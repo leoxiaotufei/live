@@ -11,7 +11,6 @@
 @interface Creator : NSObject
 @property (nonatomic, copy) NSString *portrait;
 @property (nonatomic, copy) NSString *current_value;
-@property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *hometown;
 @property (nonatomic, copy) NSString *level;
 @property (nonatomic, copy) NSString *location;

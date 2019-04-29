@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class LiveModel;
+@class LiveModel, ALinUser;
 @interface LiveCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) LiveModel *liveModel;
+@property (nonatomic, strong) ALinUser *alinUser;
 @end
 
