@@ -11,6 +11,7 @@ target 'IJKPlayerDemo' do
  pod 'MJExtension'
  pod 'SDWebImage'
  pod 'Masonry'
+ pod 'GPUImage'
   target 'IJKPlayerDemoTests' do
     inherit! :search_paths
     # Pods for testing

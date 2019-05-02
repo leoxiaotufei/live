@@ -8,7 +8,7 @@
 
 #import "CatPlayerViewController.h"
 #import "ALinLive.h"
-
+#import "UIViewController+Common.h"
 @interface CatPlayerViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIScrollView *liveInfoView;
@@ -26,17 +26,6 @@
     }else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-//    [self setupPlayerVC];
-}
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
 }
 
 - (void)setupPlayerVC {
@@ -105,7 +94,7 @@
 //                    [self.parentVc hideGufLoding];
 //                });
 //
-//            }
+//            }jj
         }
     }else if (self.playerVC.loadState & IJKMPMovieLoadStateStalled){ // 网速不佳, 自动暂停状态
 //        [self.parentVc showGifLoding:nil inView:self.moviePlayer.view];

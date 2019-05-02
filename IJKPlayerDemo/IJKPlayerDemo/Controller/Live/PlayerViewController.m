@@ -7,7 +7,8 @@
 //
 
 #import "PlayerViewController.h"
-
+#import "UIImage+MDF.h"
+#import "UIViewController+Common.h"
 @interface PlayerViewController ()
 @end
 
@@ -15,19 +16,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-    self.navigationController.navigationBar.shadowImage=[UIImage new];
-    self.navigationController.navigationBar.translucent=YES;
+    self.navigationController.navigationBar.translucent=true;
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-//    self.navigationController.navigationBar.translucent = NO;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self setupPlayerVC];
 }
 
@@ -45,6 +43,10 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.translucent=NO;
+    self.navigationController.navigationBar.shadowImage = [UIImage alloc];
+
+
     [_playerVC pause];
     [_playerVC stop];
 }

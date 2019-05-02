@@ -11,9 +11,11 @@
 #import "SocketViewController.h"
 #import "CatLiveListViewController.h"
 #import "ShowTimeViewController.h"
+#import "GPUImageViewController.h"
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *titleArray;
+@property (nonatomic, strong) NSArray *vcArray;
 @end
 
 @implementation HomeViewController
@@ -38,19 +40,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        LiveListViewController *live = [[LiveListViewController alloc] init];
-        [self.navigationController pushViewController:live animated:YES];
-    }else if (indexPath.row == 1) {
-        CatLiveListViewController *cat = [[CatLiveListViewController alloc] init];
-        [self.navigationController pushViewController:cat animated:YES];
-    }else if (indexPath.row == 2) {
-        ShowTimeViewController *showTime = [[ShowTimeViewController alloc] init];
-        [self.navigationController pushViewController:showTime animated:YES];
-    }else if (indexPath.row == 3) {
-        SocketViewController *socketVC = [[SocketViewController alloc] init];
-        [self.navigationController pushViewController:socketVC animated:YES];
-    }
+    
+        BaseViewController *vc = [[NSClassFromString(self.vcArray[indexPath.row]) alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UITableView *)tableView {
@@ -66,9 +58,18 @@
     return _tableView;
 }
 
+
+- (NSArray *)vcArray {
+    if (!_vcArray) {
+        _vcArray = @[@"LiveListViewController",@"CatLiveListViewController",@"ShowTimeViewController",@"SocketViewController",@"GPUImageViewController",@"GPUImagePicViewController",@"GPUImageStudyListVC"];
+    }
+    
+    return _vcArray;
+}
+
 - (NSArray *)titleArray {
     if (!_titleArray) {
-        _titleArray = @[@"映客直播",@"猫播",@"推流",@"scoketDemo"];
+        _titleArray = @[@"映客直播",@"猫播",@"推流",@"scoketDemo",@"视频美颜滤镜",@"美图滤镜",@"GPUImage练习"];
     }
     
     return _titleArray;

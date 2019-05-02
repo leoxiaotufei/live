@@ -28,6 +28,8 @@
     [self loadData];
 }
 
+
+
 - (void)loadData {
     
     AFHTTPSessionManager *mager = [AFHTTPSessionManager manager];
