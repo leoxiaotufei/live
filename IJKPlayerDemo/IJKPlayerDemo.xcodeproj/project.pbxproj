@@ -757,6 +757,9 @@
 		88635F7E2276F98B00BDEAA8 /* TYHSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88635F7D2276F98B00BDEAA8 /* TYHSocketManager.m */; };
 		88635F812277075B00BDEAA8 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 88635F802277075B00BDEAA8 /* UIViewController+Common.m */; };
 		88635F842277080400BDEAA8 /* UINavigationController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 88635F832277080400BDEAA8 /* UINavigationController+Common.m */; };
+		888916E1227C0207004C757A /* LCBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888916E0227C0207004C757A /* LCBaseNavigationViewController.m */; };
+		88AD609D227AFA6500A8CF77 /* LCBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AD609C227AFA6500A8CF77 /* LCBaseWebViewController.m */; };
+		88AD60A0227B0EED00A8CF77 /* LCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AD609F227B0EED00A8CF77 /* LCProgressView.m */; };
 		88D44091225F005E00465B55 /* LiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E747EB225E15A900407A6E /* LiveModel.m */; };
 		88E7478B225DE55D00407A6E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E7478A225DE55D00407A6E /* AppDelegate.m */; };
 		88E7478E225DE55D00407A6E /* LiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E7478D225DE55D00407A6E /* LiveListViewController.m */; };
@@ -1801,6 +1804,12 @@
 		88635F802277075B00BDEAA8 /* UIViewController+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		88635F822277080400BDEAA8 /* UINavigationController+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Common.h"; sourceTree = "<group>"; };
 		88635F832277080400BDEAA8 /* UINavigationController+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Common.m"; sourceTree = "<group>"; };
+		888916DF227C0207004C757A /* LCBaseNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCBaseNavigationViewController.h; sourceTree = "<group>"; };
+		888916E0227C0207004C757A /* LCBaseNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCBaseNavigationViewController.m; sourceTree = "<group>"; };
+		88AD609B227AFA6500A8CF77 /* LCBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCBaseWebViewController.h; sourceTree = "<group>"; };
+		88AD609C227AFA6500A8CF77 /* LCBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCBaseWebViewController.m; sourceTree = "<group>"; };
+		88AD609E227B0EED00A8CF77 /* LCProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCProgressView.h; sourceTree = "<group>"; };
+		88AD609F227B0EED00A8CF77 /* LCProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCProgressView.m; sourceTree = "<group>"; };
 		88E74786225DE55D00407A6E /* IJKPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IJKPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E74789225DE55D00407A6E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88E7478A225DE55D00407A6E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3104,9 +3113,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		888916DE227C01D8004C757A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				888916DF227C0207004C757A /* LCBaseNavigationViewController.h */,
+				888916E0227C0207004C757A /* LCBaseNavigationViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		88AD609A227AFA1B00A8CF77 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				88AD609B227AFA6500A8CF77 /* LCBaseWebViewController.h */,
+				88AD609C227AFA6500A8CF77 /* LCBaseWebViewController.m */,
+				88AD609E227B0EED00A8CF77 /* LCProgressView.h */,
+				88AD609F227B0EED00A8CF77 /* LCProgressView.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		88D44087225EFD5D00465B55 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				88AD609A227AFA1B00A8CF77 /* WebView */,
 				885270BC22783E7000EEF9A8 /* UIButton+TextAndImageHorizontalDisplay.h */,
 				885270BE22783E7100EEF9A8 /* UIButton+TextAndImageHorizontalDisplay.m */,
 				885270BB22783E7000EEF9A8 /* UIImage+FW.h */,
@@ -3156,6 +3186,7 @@
 		88D44088225EFD6600465B55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				888916DE227C01D8004C757A /* Base */,
 				88525C48227809D600EEF9A8 /* GPUImage(美颜) */,
 				881BE08D2261AA8200961D53 /* MaoBo */,
 				881BE08C2261AA5500961D53 /* Home */,
@@ -4160,6 +4191,7 @@
 				88525E1822781FCF00EEF9A8 /* GPUImageRawDataOutput.m in Sources */,
 				88525DBC22781FCF00EEF9A8 /* GPUImageTwoInputFilter.m in Sources */,
 				88525E2F22781FCF00EEF9A8 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
+				88AD609D227AFA6500A8CF77 /* LCBaseWebViewController.m in Sources */,
 				88525E1022781FCF00EEF9A8 /* GPUImageSubtractBlendFilter.m in Sources */,
 				88525E4122781FCF00EEF9A8 /* GPUImageMosaicFilter.m in Sources */,
 				88023536225F16FE009461D9 /* BaseViewController.m in Sources */,
@@ -4200,6 +4232,7 @@
 				8852697C22783B8E00EEF9A8 /* FWApplyFilter.m in Sources */,
 				88525DDE22781FCF00EEF9A8 /* GPUImageAdaptiveThresholdFilter.m in Sources */,
 				88525E3E22781FCF00EEF9A8 /* GPUImageHighlightShadowFilter.m in Sources */,
+				888916E1227C0207004C757A /* LCBaseNavigationViewController.m in Sources */,
 				88525E0322781FCF00EEF9A8 /* GPUImagePicture.m in Sources */,
 				88525DB622781FCF00EEF9A8 /* GPUImageTwoPassFilter.m in Sources */,
 				88525DD822781FCF00EEF9A8 /* GPUImageColorMatrixFilter.m in Sources */,
@@ -4252,6 +4285,7 @@
 				88525E0422781FCF00EEF9A8 /* GPUImagePicture+TextureSubimage.m in Sources */,
 				885270A722783BFD00EEF9A8 /* FW1977Filter.m in Sources */,
 				88023542225F6316009461D9 /* LCSocketManager.m in Sources */,
+				88AD60A0227B0EED00A8CF77 /* LCProgressView.m in Sources */,
 				88525E1122781FCF00EEF9A8 /* GPUImageCrosshairGenerator.m in Sources */,
 				881BE0942261B23900961D53 /* ALinUser.m in Sources */,
 				88525DE122781FCF00EEF9A8 /* GPUImageToonFilter.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "LCBaseNavigationViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -20,13 +22,20 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     HomeViewController *homeVC = [[HomeViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    LCBaseNavigationViewController *nav = [[LCBaseNavigationViewController alloc] initWithRootViewController:homeVC];
     self.window.rootViewController = nav;
-    
 //    if (@available(iOS 11.0, *)) {
 //        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
 //    }
+    [self appearanceConfig];
     return YES;
+}
+
+
+- (void)appearanceConfig {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:ThemeColor size:CGSizeMake(KScreenWidth, k_Height_NavBar)] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
 }
 
 

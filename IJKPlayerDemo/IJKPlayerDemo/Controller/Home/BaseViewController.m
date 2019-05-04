@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = BottomColor;
+    [self configNavBar];
+}
+
+- (void)configNavBar {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(backbarButtonItemClick:)];
+}
+
+- (void)backbarButtonItemClick:(UIBarButtonItem *)item {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

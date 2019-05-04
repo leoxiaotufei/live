@@ -19,6 +19,8 @@
 #import "CocoaAsyncSocket.h"
 #import "GPUImage.h"
 #import "GPUImageFourInputFilter.h"
+#import "UIImage+MDF.h"
+
 // X系列
 //判断是否是ipad
 #define isPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
@@ -57,6 +59,7 @@
 #define  kTabbarSafeBottomMargin        (IS_PhoneXAll ? 34.f : 0.f)
 
 #define BottomColor [UIColor mdf_colourWithHexString:@"f1f1f1"]
+#define ThemeColor [UIColor mdf_colourWithHexString:@"4d8ffa"]
 
 
 #define kBarHeight 55
